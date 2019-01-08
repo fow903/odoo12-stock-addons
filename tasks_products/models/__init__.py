@@ -1,0 +1,1 @@
+from . import tasks_products,product_template
