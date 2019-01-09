@@ -22,7 +22,7 @@
 #
 ###############################################################################
 {
-    'name': 'Conduce Salida',
+    'name': 'Vendedor Conduce Salida',
     'summary': 'Conduce de Salida',
     'version': '1.0',
 
