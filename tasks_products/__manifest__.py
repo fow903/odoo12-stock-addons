@@ -48,7 +48,9 @@ Tasks products.
         'python': [
         ],
     },
-    'data': [ 'views/view_picking_form.xml'
+    'data': [
+        'views/view_picking_form.xml',
+        'security/ir.model.access.csv'
     ],
     'demo': [
     ],
