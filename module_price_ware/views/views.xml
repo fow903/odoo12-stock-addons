@@ -1,0 +1,28 @@
+<odoo>
+  <data>
+
+       <record model="ir.ui.view" id="stock_picking_warehouse_price">
+      <field name="name">Stock Picking Warehouse price</field>
+      <field name="model">stock.picking</field>
+      <field name="inherit_id" ref="stock.view_picking_form"/>
+      <field name="arch" type="xml">
+        <field name="pack_operation_product_ids" position="after">
+             <div style="float: right; border: 2px solid black; border-radius: 10px; padding: 2px; width: 310px">
+              <table>
+                <tr>
+                  <td style="width: 200px; text-align: right">
+                    <strong>TOTAL : </strong>
+                  </td>
+                  <td style="width: 150px; text-align: right">
+                    <span><field name="total_g" readonly='1'  /></span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+        </field>
+      </field>
+    </record>
+      
+ 
+  </data>
+</odoo>

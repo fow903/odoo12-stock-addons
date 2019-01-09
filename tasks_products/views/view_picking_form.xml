@@ -1,0 +1,15 @@
+<odoo>
+<data>
+<record id="new_fields" model="ir.ui.view">
+    <field name="name">new Fields</field>
+    <field name="model">product.template</field>
+     <field name="inherit_id" ref="claim_product.product_template_form_count_claims" />
+    <field name="arch" type="xml">
+        <field name="cycle" position="after">
+            <field name="tipo"/>
+            <field name="tarea"/>
+        </field>
+    </field>
+</record>
+</data>
+</odoo>

@@ -1,0 +1,66 @@
+<openerp>
+<data>
+<record id="claim_form_product_relation" model="ir.ui.view">
+    <field name="name">Relacion reclamaciones</field>
+    <field name="model">crm.claim</field>
+    <field name="inherit_id" ref="crm_claim.crm_case_claims_form_view" />
+    <field name="arch" type="xml">
+        <field name='ref' position='replace'>
+            <field name='referencia'/>
+            <field name='sale_order' attrs="{
+            'invisible': [('referencia','!=','sale_order')],
+            'required' : [('referencia','=','sale_order')]
+            }"/>
+            <field name='employee' attrs="{
+            'invisible': [('referencia','!=','employee')],
+            'required' : [('referencia','=','employee')]
+            }"/>
+            <field name='invoice' attrs="{
+            'invisible': [('referencia','!=','invoice')],
+            'required' : [('referencia','=','invoice')]
+            }"/>
+            <field name='partner' attrs="{
+            'invisible': [('referencia','!=','partner')],
+            'required' : [('referencia','=','partner')]
+            }"/>
+            <field name='purchase' attrs="{
+            'invisible': [('referencia','!=','purchase_order')],
+            'required' : [('referencia','=','purchase_order')]}"/>
+            <field name='delivery_slip' attrs="{
+            'invisible': [('referencia','!=','delivery_slip')],
+            'required' : [('referencia','=','delivery_slip')]
+            }"/>
+            <field name='claim_lines' mode="tree,kanban" 
+            attrs="{'invisible': [('referencia','not in',(
+            'invoice',
+            'sale_order',
+            'purchase_order',   
+            'delivery_slip')
+            )]}">
+                <form string="Lineas de Producto">
+                    <group>
+                        <field name='product_id' 
+                       />        
+                    </group>
+                    <label for="name"/>
+                    <field name="name"/>
+                </form>
+                <tree string="Lineas de Producto" editable="bottom">
+                    <field name='product_id' />
+                    <field name='name'/>
+                    <field name='qty_line'/>
+                    <field name='uom' options="{'no_create': True}"/>                 
+                </tree>
+            </field>
+        </field>   
+    </field>
+</record>
+<record id="crm_claim_action_stock" model="ir.actions.act_window">
+            <field name="name">Reclamaciones Productos</field>
+            <field name="res_model">crm.claim</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+</record>
+</data>
+</openerp>
+

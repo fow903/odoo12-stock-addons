@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_modify_product_field_wh_cost" model="ir.ui.view">
+            <field name="name">Modificar Campos del Producto Costo de Almacen</field>
+            <field name="model">modify_product.fields</field>
+            <field name="arch" type="xml">
+                <form string="Modificar Costo de Almacen">
+
+
+                    <group string= "Modificar Costo de Almacen">
+                        <field name="product_id" readonly="1" />
+                        <field name="wh_cost" />
+
+                    </group>
+
+                    <footer>
+                        <button string="Modificar" type="object" name="change_product_fields_wh_cost" class="oe_highlight" help="modifica el valor del campo costo de almacen"/>
+                        <button string="Close" special="cancel" class="oe_right oe_highlight" help="Click this button to close the window"/>
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+
+          <record id="view_modify_product_field_margin_porcent" model="ir.ui.view">
+            <field name="name">Modificar Campos del Producto Margen del producto</field>
+            <field name="model">modify_product.fields</field>
+            <field name="arch" type="xml">
+                <form string="Modificar Costo de Almacen">
+
+
+                    <group string= "Modificar Margen del Producto">
+                        <field name="product_id" readonly="1" />
+                        <field name="list_price" readonly="1" />
+                        <field name="list_price_new" readonly="1" />
+                        <field name="margin_porcent" />
+
+                    </group>
+
+                    <footer>
+                        <button string="Modificar" type="object" name="change_product_fields_list_price_by_margin" class="oe_highlight" help="modifica el valor del campo costo de almacen"/>
+                        <button string="Close" special="cancel" class="oe_right oe_highlight" help="Click this button to close the window"/>
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
