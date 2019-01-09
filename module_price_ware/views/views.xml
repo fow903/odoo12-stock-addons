@@ -1,4 +1,4 @@
-<openerp>
+<odoo>
   <data>
 
        <record model="ir.ui.view" id="stock_picking_warehouse_price">
@@ -25,4 +25,4 @@
       
  
   </data>
-</openerp>
+</odoo>

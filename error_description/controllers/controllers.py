@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from openerp import http
+from odoo import http
 
 # class /odoo/modules/9.0/custom/addons/errorDescription(http.Controller):
 #     @http.route('//odoo/modules/9.0/custom/addons/error_description//odoo/modules/9.0/custom/addons/error_description/', auth='public')

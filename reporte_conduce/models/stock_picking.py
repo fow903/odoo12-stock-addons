@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from openerp import models
+from odoo import models
 
 class stockpicking(models.Model):
     _inherit = 'stock.picking'

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from openerp import http
+from odoo import http
 
 # class /odoo/modules/9.0/custom/addons/warehousePrice(http.Controller):
 #     @http.route('//odoo/modules/9.0/custom/addons/warehouse_price//odoo/modules/9.0/custom/addons/warehouse_price/', auth='public')

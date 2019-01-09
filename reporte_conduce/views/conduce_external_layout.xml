@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
         <template id="conduce_external_layout">
             <t t-if="not o and doc">
@@ -78,4 +78,4 @@
         </template>
 
     </data>
-</openerp>
+</odoo>

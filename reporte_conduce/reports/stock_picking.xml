@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
         <report
             string="Conduce Notas"
@@ -140,4 +140,4 @@
             </t> 
         </template>
     </data>
-</openerp>
+</odoo>

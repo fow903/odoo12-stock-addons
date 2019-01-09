@@ -1,4 +1,4 @@
-<openerp>
+<odoo>
   <data>
    <record model="ir.ui.view" id="sale_view_form_qty_available">
       <field name="name">sale order item no</field>
@@ -17,4 +17,4 @@
 
 
   </data>
-</openerp>
+</odoo>
