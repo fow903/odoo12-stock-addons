@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <act_window
+            id="action_stock_barcode_dinamic"
+            name="Capturar inventario"
+            res_model="dinamic.update"
+            view_mode="tree,form"
+        />
+        <menuitem
+            id="menu_stock_barcode_dinamic"
+            name="Actualizar cantidades Dinamicamente"
+            parent="stock.menu_stock_inventory_control"
+            sequence="20"
+            action="action_stock_barcode_dinamic"
+        />
+        <record id="update_quants.view_form_stock_update_dinamic" model="ir.ui.view">
+            <field name="name">Capturar inventario Dinamicamente</field>
+            <field name="model">dinamic.update</field>
+            <field name="arch" type="xml">
+		<form string="Inventario Dinamico">
+                <sheet>
+                    <field name="product_id" invisible="True"/>
+                    <table>
+                        <tr>
+                        <td><b>Almacen: </b></td>
+                        <td><b><field name="ubicacion"/></b></td>
+                      </tr>
+                      <tr>
+                        <td><b>Producto: </b></td>
+                        <td><b><field name="product_name" readonly="1"/></b></td>
+                      </tr>
+                      <tr>
+                        <td><b>Codigo de Barras Producto: </b></td>
+                        <td><field name="pbarcode"/></td>
+                      </tr>
+                      <field name="location_id" invisible="True"/>
+			<field name="product_uom_id" invisible="True"/>
+                      <tr>
+                        <td><b>Ubicación: </b></td>
+                        <td><b><field name="location_name" readonly="1"/></b></td>
+                      </tr>
+                      <tr>
+                        <td><b>Codigo de barras ubicación: </b></td>
+                        <td><field name="lbarcode"/></td>
+                      </tr>
+                      <tr>
+                        <td><b>Nueva Cantidad: </b></td>
+                        <td><field name="new_quantity" string="Nueva Cantidad"/></td>
+                      </tr>
+                      <tr>
+                        <td><b>Vaciar ubicaciones hijas: </b></td>
+                        <td><field name="is_clear" string="Vaciar ubicaciones hijas"/></td>
+                      </tr>
+                    </table>
+                    <button name="updatenum" type="object" string="Actualizar" class="oe_highlight"/>
+                    <button
+                            name="set_to_zero"
+                            type="object"
+                            string="Establecer Cantidad a Cero"
+                            class="oe_highlight"
+                            confirm="Esta seguro que quiere poner la cantidad en 0 ?"
+                    />
+                </sheet>
+			</form>
+            </field>
+        </record>
+
+        <record id="update_quants.view_tree_stock_update_dinamic" model="ir.ui.view">
+            <field name="name">Captura de inventario tree dinamic</field>
+            <field name="model">dinamic.update</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="lbarcode" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

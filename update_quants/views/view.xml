@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <act_window
+            id="action_stock_barcode"
+            name="Capturar inventario"
+            res_model="stock.update"
+            view_mode="tree,form"
+        />
+        <menuitem
+            id="menu_stock_barcode"
+            name="Actualizar cantidades"
+            parent="stock.menu_stock_inventory_control"
+            sequence="20"
+            action="action_stock_barcode"
+        />
+        <record id="update_quants.view_form_stock_update" model="ir.ui.view">
+            <field name="name">Capturar inventario</field>
+            <field name="model">stock.update</field>
+            <field name="arch" type="xml">
+		<form string="Actualizar">                
+		<header>
+                <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"/>
+                </header>
+                <sheet>
+                    <field name="product_id" invisible="True"/>
+                    <table>
+                      <tr>
+                        <td><b>Inventario: </b></td>
+                        <td><b><field name="inventory_id"
+                         domain="[('state','=','confirm')]"
+                         attrs="{'readonly':[('inventory_set', '=', True)]}"/>
+                         <field name='inventory_set' invisible = "1"/>
+                         </b></td>
+                      </tr>
+                      <tr>
+                        <td><b>Producto: </b></td>
+                        <td><b><field name="product_name"/></b></td>
+                      </tr>
+                      <tr>
+                        <td><b>Codigo de Barras Producto: </b></td>
+                        <td><field name="pbarcode"/></td>
+                      </tr>
+                      <field name="location_id" invisible="True"/>
+			<field name="product_uom_id" invisible="True"/>
+                      <tr>
+                        <td><b>Ubicación: </b></td>
+                        <td><b><field name="location_name"/></b></td>
+                      </tr>
+                      <tr>
+                        <td><b>Codigo de barras ubicación: </b></td>
+                        <td><field name="lbarcode"/></td>
+                      </tr>
+                      <tr>
+                        <td><b>Nueva Cantidad: </b></td>
+                        <td><field name="new_quantity" string="Nueva Cantidad"/></td>
+                      </tr>
+                    </table>
+                    <button name="updatenum" type="object" string="Actualizar" class="oe_highlight"/>
+                
+                </sheet>
+			</form>
+            </field>
+        </record>
+        
+        
+        <record id="update_quants.view_tree_stock_update" model="ir.ui.view">
+            <field name="name">Captura de inventario tree</field>
+            <field name="model">stock.update</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="inventory_id" />
+                </tree>
+            </field>
+        </record>
+        
+
+
+    </data>
+</odoo>
