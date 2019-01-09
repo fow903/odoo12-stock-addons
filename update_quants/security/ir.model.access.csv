@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stock_update,access_stock_update,model_stock_update,stock.group_stock_manager,1,1,1,1
+access_dinamic_update,access_dinamic_update,model_dinamic_update,stock.group_stock_manager,1,1,1,1
