@@ -24,7 +24,7 @@
 {
     'name': 'BoM Field fixed',
     'summary': 'B0M',
-    'version': '1.0',
+    'version': '12.0',
 
     'description': """
 This module creates a field named NAME in the Bill of Materials view form and tree view.

@@ -12,7 +12,7 @@ class stockpicking(models.Model):
             packs = self.env['stock.pack.operation'].search([('picking_id', '=', rec.id)])
             li = []
             for pack in packs:
-                print pack
                 li.append(pack.list_price*pack.qty_done)
             rec.total_g=sum(li)
+
     total_g=fields.Float(string="TOTAL: ",compute='_compute_total')
