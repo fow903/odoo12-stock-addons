@@ -23,7 +23,7 @@
 {
     'name': 'Tasks products',
     'summary': 'This module adds the functionality to approve stock pickings',
-    'version': '1.0',
+    'version': '12.0',
 
     'description': """
 Tasks products.
