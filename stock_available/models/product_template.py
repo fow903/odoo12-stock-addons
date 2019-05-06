@@ -34,6 +34,8 @@ class ProductTemplate(models.Model):
         variants_dict = self.mapped(
             'product_variant_ids')._compute_available_quantities_dict()
         res = {}
+
+
         for template in self:
             immediately_usable_qty = sum(
                 [variants_dict[p.id]["immediately_usable_qty"] for p in
