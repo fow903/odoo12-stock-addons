@@ -16,7 +16,7 @@
         </template>
             
         <template id="deliveryslip_new_report_document">
-            <t t-call="report.html_container">
+            <t t-call="web.html_container">
                 <t t-call="reporte_conduce.conduce_external_layout">
                     <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" />
                     <div class="page">
